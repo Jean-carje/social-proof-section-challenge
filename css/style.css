@@ -230,6 +230,12 @@ main {
 }
 
 @media screen and (max-width: 375px)  {
+	body {
+		background-image: url("/images/bg-pattern-top-mobile.svg"), url("/images/bg-pattern-bottom-mobile.svg");
+		background-size: auto;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
 	main { margin: 60px auto 40px auto; }
 	.header-title { margin-bottom: 30px; }
 	/* .header-title p { width: 100%; } */
