@@ -1,0 +1,237 @@
+/*  Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+
+/* - Mobile: 375px
+- Desktop: 1440px */
+
+/* Variables */
+:root {
+	/* foonts */
+	--font-var: 'Spartan', sans-serif;
+	--font-normal-size: 15px;
+
+	--font-regular: 400;
+	--font-midle: 500;
+	--font-bold: 700;
+
+	/*---- Colors ---*/
+	/* primary */
+	--Very-Dark-Magenta: hsl(300, 43%, 22%);
+	--Soft-Pink: hsl(333, 80%, 67%);
+	/* neutral */
+	--Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+	--Light-Grayish-Magenta: hsl(300, 24%, 96%);
+	--White-color: hsl(0, 0%, 100%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: url("/images/bg-pattern-top-desktop.svg"), url("/images/bg-pattern-bottom-desktop.svg");
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.wrapper {
+	max-width: 1440px;
+	font-family: var(--font-var);
+	font-size: var(--font-normal-size);
+	color: var(--Very-Dark-Magenta);
+}
+main {
+	width: 80%;
+	margin: 80px auto 10px auto;
+	line-height: 20px;
+}
+
+/* ----------------------------------- */
+/* 		header		 */
+.header-container {
+
+	display: flex;
+	justify-content: space-between;
+	height: auto;
+	margin-bottom: 40px;
+}
+
+.header-title {
+	width: 40%;
+	display: inline-block;
+}
+
+.header-title h1 {
+	font-size: 3rem;
+	line-height: 50px;
+	margin-bottom: 1rem;
+}
+
+.header-title p {
+	color: var(--Dark-Grayish-Magenta);
+	font-weight: var(--font-midle);
+}
+
+/* Stars */
+.stars-container {
+	width: 55%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	/* flex-wrap: wrap; */
+	font-size: 14px;
+	font-weight: var(--font-bold);
+}
+
+.item-star, .star-svg, .item-star p {
+	display: inline-block;
+}
+
+.item-star {
+	width: 80%;
+	background-color: var(--Light-Grayish-Magenta);
+	padding: 13px 15px;
+	border-radius: 10px;
+}
+
+.star-svg {
+	margin-right: 18px;
+	margin-left: 18px;
+}
+
+#star{
+	margin-right: 5px;
+}
+
+.star-a { align-self: flex-start; }
+.star-b { align-self: center; }
+.star-c { align-self: flex-end; }
+
+/* ----------------------------------- */
+/* 		Comments		 */
+.testimonials-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr) 5fr repeat(2, 1fr);
+	gap: 0 30px;
+	margin-top: 40px;
+	box-sizing: border-box;
+}
+
+.items-testimonial {
+	display: inline-block;
+	background-color: var(--Very-Dark-Magenta);
+	border-radius: 10px;
+	color: var(--White-color);
+	padding: 25px 30px;
+}
+
+.header-testimonial {
+	margin-bottom: 1rem;
+	display: flex;
+	align-items: center;
+}
+
+.item-img {
+	width: 45px;
+	height: auto;
+	border: 1px solid var(--White-color);
+	border-radius: 100%;
+	margin-right: 1.4rem;
+}
+
+.customer-name {
+	font-size: var(--font-normal-size);
+	margin-bottom: 3px;
+}
+
+.item-verified {
+	color: var(--Soft-Pink);
+}
+
+
+.comment-a { grid-row: 1 / 4; }
+.comment-b { grid-row: 2 / 5; }
+.comment-c { grid-row: 3 / 6; }
+
+/* ----------------------------------- */
+/* 		Footer		 */
+.attribution {
+	font-size: 11px;
+	text-align: center;
+  }
+  .attribution a {
+	color: hsl(228, 45%, 44%);
+  }
+
+/* ----------------------------------- */
+@media screen and (max-width: 980px) {
+	.header-container {
+		width: 100%;
+	}
+	.header-title h1 {
+		width: 100%;
+		font-size: 2.5rem;
+	}
+	.stars-container {
+		width: 50%;
+	}	
+	.item-star {
+		padding: 10px 15px;
+	}
+	.item-star, .star-svg, .item-star p {
+		display: block;
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 830px) {
+	main {
+		margin: 70px auto 30px auto;
+	}
+	.header-title {
+		width: 45%;
+		margin-bottom: 40px;
+	}
+	.stars-container {
+		width: 50%;
+	}
+	.star-a, .star-b, .star-c {
+		align-self: center;
+	}
+	.testimonials-container {
+		grid-template-columns: 100%;
+		grid-template-rows: repeat(3, 1fr);
+		gap: 20px 0;
+	}
+	.comment-a,
+	.comment-b,
+	.comment-c {
+		grid-column: 1;
+	}
+	.comment-a { grid-row: 1; }
+	.comment-b { grid-row: 2; }
+	.comment-c { grid-row: 3; }
+}
+
+@media screen and (max-width: 560px) {
+	.header-container {
+		flex-direction: column;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+	.header-title, .stars-container { width: 100%; }
+	.item-star {
+		width: 90%;
+		margin-bottom: 20px;
+	}
+}
+
+@media screen and (max-width: 375px)  {
+	main { margin: 60px auto 40px auto; }
+	.header-title { margin-bottom: 30px; }
+	/* .header-title p { width: 100%; } */
+	.stars-container { font-size: var(--font-normal-size); }
+}
